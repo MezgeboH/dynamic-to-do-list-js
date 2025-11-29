@@ -1,6 +1,6 @@
 // Run JavaScript after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    //Select DOM elements
+    // Select DOM elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
         taskInput.value = '';
     }
 
-    //  to create a task element with remove button
+    // Function to create a task element with remove button
     function createTaskElement(taskText) {
         const li = document.createElement('li');
         li.textContent = taskText;
 
         const removeBtn = document.createElement('button');
         removeBtn.textContent = 'Remove';
-        removeBtn.className = 'remove-btn';
+        removeBtn.classList.add('remove-btn'); 
 
         // Remove task on button click
         removeBtn.onclick = () => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         taskList.appendChild(li);
     }
 
-    // Attach event listeners
+    //Attach event listeners
     addButton.addEventListener('click', addTask);
 
     taskInput.addEventListener('keypress', (event) => {
